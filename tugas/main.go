@@ -1,7 +1,7 @@
 package main
 
 import (
-	"20241017/class/1/nasabah"
+	"20241017/tugas/nasabah"
 	"errors"
 	"fmt"
 )
@@ -26,7 +26,7 @@ func CariNasabah(nama string) (*nasabah.Akun, error) {
 func main() {
 	TambahNasabah("satu", "satu@mail.com")
 	TambahNasabah("dua", "dua@mail.com")
-	//tambahNasabah("tiga", "tiga@mail.com")
+	//TambahNasabah("tiga", "tiga@mail.com")
 
 	customer, err := CariNasabah("dua")
 	if err != nil {
