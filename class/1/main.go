@@ -8,13 +8,13 @@ import (
 
 var daftarNasabah []nasabah.Akun
 
-func tambahNasabah(nama string, email string) {
+func TambahNasabah(nama string, email string) {
 	akun := nasabah.Akun{}.InitAkun(nama, email)
 	daftarNasabah = append(daftarNasabah, akun)
 	fmt.Printf("akun berhasil ditambahkan %+v\n", daftarNasabah)
 }
 
-func akun(nama string) (*nasabah.Akun, error) {
+func CariNasabah(nama string) (*nasabah.Akun, error) {
 	for index, customer := range daftarNasabah {
 		if customer.GetNama() == nama {
 			return &daftarNasabah[index], nil
@@ -24,11 +24,11 @@ func akun(nama string) (*nasabah.Akun, error) {
 }
 
 func main() {
-	tambahNasabah("satu", "satu@mail.com")
-	tambahNasabah("dua", "dua@mail.com")
+	TambahNasabah("satu", "satu@mail.com")
+	TambahNasabah("dua", "dua@mail.com")
 	//tambahNasabah("tiga", "tiga@mail.com")
 
-	customer, err := akun("dua")
+	customer, err := CariNasabah("dua")
 	if err != nil {
 		return
 	}
