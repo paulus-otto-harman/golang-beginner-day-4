@@ -6,7 +6,7 @@ type Saldo struct {
 	saldo int
 }
 
-func (saldo *Saldo) Tambah(duit int) (int, error) {
+func (saldo *Saldo) Kredit(duit int) (int, error) {
 	if duit <= 0 {
 		return saldo.saldo, errors.New("jumlah setoran tidak boleh lebih kecil atau sama dengan 0")
 	}

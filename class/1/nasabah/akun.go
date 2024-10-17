@@ -19,7 +19,7 @@ func (akun Akun) GetNama() string {
 }
 
 func (akun *Akun) SetorDana(uang int) string {
-	_, err := akun.saldo.Tambah(uang)
+	_, err := akun.saldo.Kredit(uang)
 	if err != nil {
 		fmt.Printf("\x1b[%dm%s%s%s\x1b[0m\n", 31, "*** Error: ", err, " ***")
 		return "saldo tetap atau tidak bertambah"
