@@ -16,7 +16,10 @@ func (saldo *Saldo) Kredit(duit int) (int, error) {
 }
 
 func (saldo *Saldo) Debet(duit int) (int, error) {
-	if saldo.saldo < duit {
+	switch {
+	case duit <= 0:
+		return saldo.saldo, errors.New("jumlah penarikan dana tidak boleh lebih kecil atau sama dengan 0")
+	case saldo.saldo < duit:
 		return saldo.saldo, errors.New("saldo tidak mencukupi")
 	}
 	saldo.saldo -= duit
